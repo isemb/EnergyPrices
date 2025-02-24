@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>My Strompris API &#8212; Strompris  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Strompris’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="my-strompris-api">
+<h1>My Strompris API<a class="headerlink" href="#my-strompris-api" title="Link to this heading">¶</a></h1>
+<hr class="docutils" />
+<p id="module-strompris">Fetch data from <a class="reference external" href="https://www.hvakosterstrommen.no/strompris-api">https://www.hvakosterstrommen.no/strompris-api</a>
+and visualize it.</p>
+<p>Assignment 5</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="strompris.fetch_day_prices">
+<span class="sig-prename descclassname"><span class="pre">strompris.</span></span><span class="sig-name descname"><span class="pre">fetch_day_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">date</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NO1'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#strompris.fetch_day_prices" title="Link to this definition">¶</a></dt>
+<dd><p>Fetch one day of data for one location from hvakosterstrommen.no API</p>
+<p>Fetches electricity price data for a specific date and location from hvakosterstrommen.no API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date</strong> (<em>Datetime.date</em><em> (</em><em>optional</em><em>)</em>) – The date for which to fetch data. If None, defaults to today’s date.</p></li>
+<li><p><strong>location</strong> (<em>str</em><em> (</em><em>optional</em><em>)</em>) – The location code for which to fetch data. Defaults to “NO1”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dataframe containing the fetched data about the prices for the given location and date.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="strompris.fetch_prices">
+<span class="sig-prename descclassname"><span class="pre">strompris.</span></span><span class="sig-name descname"><span class="pre">fetch_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">date</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">days</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('NO1',</span> <span class="pre">'NO2',</span> <span class="pre">'NO3',</span> <span class="pre">'NO4',</span> <span class="pre">'NO5')</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#strompris.fetch_prices" title="Link to this definition">¶</a></dt>
+<dd><p>Fetch prices for multiple days and locations into a single DataFrame</p>
+<blockquote>
+<div><p>Fetches electricity price data for multiple days and locations from hvakosterstrommen.no API.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>end_date</strong> (<em>datetime.date</em><em> (</em><em>optional</em><em>)</em>) – The end date until which to fetch prices. Defaults to today’s date.</p></li>
+<li><p><strong>days</strong> (<em>int</em><em> (</em><em>optional</em><em>)</em>) – The number of days to fetch prices for, leading up to the end_date. Defaults to 7.</p></li>
+<li><p><strong>locations</strong> (<em>list</em><em>[</em><em>str</em><em>] </em><em>(</em><em>optional</em><em>)</em>) – The list of locations for which to fetch prices. Defaults to all locations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing prices for multiple days and locations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="strompris.main">
+<span class="sig-prename descclassname"><span class="pre">strompris.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#strompris.main" title="Link to this definition">¶</a></dt>
+<dd><p>Allow running this module as a script for testing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="strompris.plot_activity_prices">
+<span class="sig-prename descclassname"><span class="pre">strompris.</span></span><span class="sig-name descname"><span class="pre">plot_activity_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'shower'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Chart</span></span></span><a class="headerlink" href="#strompris.plot_activity_prices" title="Link to this definition">¶</a></dt>
+<dd><p>Plot price for one activity by name,
+given a data frame of prices, and its duration in minutes.</p>
+<p>Make sure to document arguments and return value…</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="strompris.plot_daily_prices">
+<span class="sig-prename descclassname"><span class="pre">strompris.</span></span><span class="sig-name descname"><span class="pre">plot_daily_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Chart</span></span></span><a class="headerlink" href="#strompris.plot_daily_prices" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the daily average price</p>
+<p>x-axis should be time_start (day resolution)
+y-axis should be price in NOK</p>
+<p>You may use any mark.</p>
+<p>Make sure to document arguments and return value…</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="strompris.plot_prices">
+<span class="sig-prename descclassname"><span class="pre">strompris.</span></span><span class="sig-name descname"><span class="pre">plot_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Chart</span></span></span><a class="headerlink" href="#strompris.plot_prices" title="Link to this definition">¶</a></dt>
+<dd><p>Plot energy prices over time</p>
+<p>Creates a line chart showing energy prices over time for different locations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The DataFrame containing data to plot.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A chart visualizing energy prices over time for different locations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>alt.Chart</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>//.. autofunction:: fetch_day_prices</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Strompris</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">My Strompris API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#strompris.fetch_day_prices"><code class="docutils literal notranslate"><span class="pre">fetch_day_prices()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#strompris.fetch_prices"><code class="docutils literal notranslate"><span class="pre">fetch_prices()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#strompris.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#strompris.plot_activity_prices"><code class="docutils literal notranslate"><span class="pre">plot_activity_prices()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#strompris.plot_daily_prices"><code class="docutils literal notranslate"><span class="pre">plot_daily_prices()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#strompris.plot_prices"><code class="docutils literal notranslate"><span class="pre">plot_prices()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Strompris’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, IN3110 (Iselin M. Bakke).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
