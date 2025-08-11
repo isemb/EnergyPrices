@@ -1,3 +1,25 @@
+This project is a Python + Flask web application that visualizes electricity prices for 5 cities in Norway. Data is fetched from the Strømpris API and displayed in an interactive GUI, allowing users to:
+
+- View prices for different cities and times of day
+
+- Select specific days to display in the graph
+
+- Compare prices across cities
+
+The API is automatically documented, making it easy to understand and extend.
+
+Features
+- Live electricity price data from Strømpris API
+
+- Graph visualization of hourly prices
+
+- City and date selection in the UI
+
+- Automatic API documentation
+
+- Built with Python, Flask, and common data/visualization libraries
+
+
 Required packages and dependecies:
 
 (requires python version >=3.8 )
