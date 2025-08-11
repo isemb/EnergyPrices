@@ -26,7 +26,3 @@ how to run:
 - open the link given in the terminal to display the webpage
 - press ctrl + C to quit in the terminal
 
-
-
-(implemented all tasks except the bonus tasks)
-
