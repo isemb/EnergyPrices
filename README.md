@@ -1,4 +1,4 @@
-This project is a Python + Flask web application that visualizes electricity prices for 5 cities in Norway. Data is fetched from the Strømpris API and displayed in an interactive GUI, allowing users to:
+This project is a Python + FastAPI web application that visualizes electricity prices for 5 cities in Norway. Data is fetched from the Strømpris API and displayed in an interactive GUI, allowing users to:
 
 - View prices for different cities and times of day
 
@@ -6,7 +6,7 @@ This project is a Python + Flask web application that visualizes electricity pri
 
 - Compare prices across cities
 
-The API is automatically documented, making it easy to understand and extend.
+The API is automatically documented with Sphinx
 
 Features
 - Live electricity price data from Strømpris API
